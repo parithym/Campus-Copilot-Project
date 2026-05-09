@@ -49,7 +49,7 @@ export default function LoginPage() {
           </form>
           <div className="mt-6 pt-4 border-t border-slate-100 space-y-2">
             <p className="text-xs text-slate-400 font-medium">Demo accounts:</p>
-            {[['student@copilot.com', 'Student@123', 'Student'], ['tpo@copilot.com', 'Tpo@123', 'TPO'], ['admin@copilot.com', 'Admin@123', 'Admin']].map(([e, p, r]) => (
+            {[['tpo@copilot.com', 'Tpo@123', 'TPO'], ['admin@copilot.com', 'Admin@123', 'Admin']].map(([e, p, r]) => (
               <button key={r} onClick={() => setForm({ email: e, password: p })} className="block w-full text-left text-xs text-indigo-500 hover:text-indigo-700 px-2 py-1 rounded hover:bg-indigo-50">
                 {r}: {e} / {p}
               </button>
