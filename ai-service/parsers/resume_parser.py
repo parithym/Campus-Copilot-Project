@@ -1,4 +1,4 @@
-import fitz  # PyMuPDF
+from pypdf import PdfReader
 import docx
 import os
 
@@ -11,10 +11,10 @@ def extract_text(file_path: str) -> str:
     return ""
 
 def _extract_pdf(path: str) -> str:
+    reader = PdfReader(path)
     text = ""
-    with fitz.open(path) as doc:
-        for page in doc:
-            text += page.get_text()
+    for page in reader.pages:
+        text += page.extract_text() or ""
     return text.strip()
 
 def _extract_docx(path: str) -> str:
